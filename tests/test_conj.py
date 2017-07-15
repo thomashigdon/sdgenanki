@@ -1,3 +1,4 @@
+from context import sdgenanki
 import sdgenanki.scraper as scraper
 
 test_data = \
