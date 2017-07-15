@@ -1,0 +1,6 @@
+[submodule "deps/genanki"]
+	path = deps/genanki
+	url = https://github.com/kerrickstaley/genanki.git
+[submodule "deps/anki"]
+	path = deps/anki
+	url = https://github.com/dae/anki.git
