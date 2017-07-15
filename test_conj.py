@@ -1,4 +1,4 @@
-import ssgenanki.scraper as scraper
+import sdgenanki.scraper as scraper
 
 test_data = \
 {
