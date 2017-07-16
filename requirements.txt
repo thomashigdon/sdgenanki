@@ -1,0 +1,5 @@
+pytest
+cached_property
+pystache
+pyyaml
+pyaudio
