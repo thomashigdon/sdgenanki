@@ -3,3 +3,4 @@ cached_property
 pystache
 pyyaml
 pyaudio
+bs4
