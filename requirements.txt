@@ -4,3 +4,5 @@ pystache
 pyyaml
 pyaudio
 bs4
+requests
+requests_mock

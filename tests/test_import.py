@@ -3,3 +3,4 @@ def test_import():
     import anki
     import genanki
     import bs4
+    import requests

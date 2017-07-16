@@ -1,11 +1,12 @@
 from context import sdgenanki
 import sdgenanki.scraper as scraper
+import requests_mock
 
 test_data = \
 {
     "tener" :
     {
-        "present" :
+        "presentIndicative" :
         {
             "yo" : "tengo"
         }
@@ -13,5 +14,12 @@ test_data = \
 }
 
 def test_conj():
-   assert (scraper.get_conj("tener") ==
-           test_data["tener"])
+    with requests_mock.mock() as m:
+        verb = "tener"
+        url = "http://www.spanishdict.com/conjugate/{}".format(verb)
+        with open("tests/tenertest.html") as f:
+            text = f.read()
+        m.get(url, text=text)
+        result = scraper.get_conj(verb)
+        yo = result["presentIndicative"]["yo"]
+        assert yo == test_data["tener"]["presentIndicative"]["yo"]
