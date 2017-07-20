@@ -1,0 +1,48 @@
+#!/usr/local/bin/python3.5
+
+import sys
+import sdgenanki
+import argparse
+
+all_tenses = [
+"pastPerfectContinuous",
+"preteritPerfect",
+"presentPerfectSubjunctive",
+"futurePerfectSubjunctive",
+"presentPerfectContinuous",
+"imperfectSubjunctive",
+"presentContinuous",
+"pastPerfect",
+"imperfectContinuous",
+"imperfectSubjunctive2",
+"pastContinuous",
+"conditionalContinuous",
+"presentSubjunctive",
+"futurePerfectContinuous",
+"futurePerfect",
+"conditionalIndicative",
+"negativeImperative",
+"futureContinuous",
+"futureSubjunctive",
+"presentIndicative",
+"futureIndicative",
+"conditionalPerfect",
+"imperative",
+"imperfectIndicative",
+"pastPerfectSubjunctive",
+"presentPerfect",
+"preteritIndicative",
+"preteritContinuous",
+]
+
+def main():
+	parser = argparse.ArgumentParser(description='Create anki deck from spanishdict.')
+	parser.add_argument('outfile', help='filename for deck')
+
+	args = parser.parse_args()
+	d = sdgenanki.SDVerbDeck(["tener", "haber"], all_tenses, ["yo"])
+	d.generate(args.outfile)
+	return 0
+
+if __name__ == "__main__":
+    sys.exit(main())
